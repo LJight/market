@@ -1,1 +1,1 @@
-hello world!----name=<#if name??>${name}</#if>
+hello world!----name=<#if siteUrl??>${siteUrl}</#if>
