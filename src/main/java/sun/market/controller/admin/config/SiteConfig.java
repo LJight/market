@@ -17,7 +17,7 @@ public class SiteConfig {
     private String siteName;
     @Value("${sun.site.url}")
     private String siteUrl;
-    private String getSiteName(){
+    public String getSiteName(){
         return siteName;
     }
     public void setSiteName(String siteName){
