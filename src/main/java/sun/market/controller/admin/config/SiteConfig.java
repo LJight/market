@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-//网站基础信息配置类
-
-
-
+/**
+ * 网站基础信息配置
+ */
 
 @Component
 @PropertySource(value="classpath:site.properties")
