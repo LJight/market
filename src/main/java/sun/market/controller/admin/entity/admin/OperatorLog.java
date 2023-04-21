@@ -1,15 +1,23 @@
 package sun.market.controller.admin.entity.admin;
 
+import javax.persistence.*;
+
 /**
  * 后台操作日志记录
  */
-public class OperationLog {
 
+//删改类及属性后需删除数据库中的表后重新运行项目
+
+@Entity
+@Table(name="operator_log")
+//基础数据继承自BaseEntity
+public class OperatorLog extends BaseEntity{
+
+    @Column(name = "operator",nullable = false,length = 18)
     private String operator;//操作者
 
+    @Column(name = "content",nullable = false,length = 128)
     private String content;//操作内容
-
-    private String createTime;//操作时间
 
     public String getOperator() {
         return operator;
@@ -27,11 +35,5 @@ public class OperationLog {
         this.content = content;
     }
 
-    public String getCreateTime() {
-        return createTime;
-    }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
 }

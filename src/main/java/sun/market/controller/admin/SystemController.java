@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sun.market.controller.admin.config.SiteConfig;
-import sun.market.controller.admin.entity.admin.OperationLog;
+import sun.market.controller.admin.entity.admin.OperatorLog;
+
+import java.util.*;
 
 /**
  * 系统控制器
@@ -26,11 +28,21 @@ public class SystemController {
 
     @RequestMapping(value="/index")
     public String index( String name, Model model){
-        OperationLog operationLog = new OperationLog();
-        operationLog.setOperator("sun");
-        operationLog.setContent("校园二手交易平台的网址是：market.com");
+        OperatorLog operatorLog = new OperatorLog();
+        operatorLog.setOperator("sun");
+        operatorLog.setContent("校园二手交易平台的网址是：market.com");
         model.addAttribute("name",name);
-        model.addAttribute("operator",operationLog);
+        model.addAttribute("operator", operatorLog);
+        model.addAttribute("data",new Date());
+        String html = "<div>div</div>";
+        model.addAttribute("html",html);
+        Map<String,String>map = new HashMap<String,String>();
+        map.put("name","zzz");
+        map.put("tel","13952325745");
+        map.put("age","23");
+        model.addAttribute("map",map);
+        Integer age = 20;
+        model.addAttribute("age",age);
         return "index";
     }
 }
